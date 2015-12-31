@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/cdeck3r/BattleShip.svg?label=ready&title=Ready)](http://waffle.io/cdeck3r/BattleShip) 
+
 # Battleship Software Project
 
 A software project is part of my lecture in Software Engineering at the Reutlingen University. Students are encouraged to develop a software using established software engineering practises including goal formulation, team constitution, requirements analysis, usage of UML, design patterns, software testing and versioning. 
