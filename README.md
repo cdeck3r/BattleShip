@@ -1,4 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/cdeck3r/BattleShip.svg?label=ready&title=Ready)](http://waffle.io/cdeck3r/BattleShip) 
+[![Stories in Current Iteration](https://badge.waffle.io/cdeck3r/BattleShip.svg?label=ready&title=Current%20Iteration)](http://waffle.io/cdeck3r/BattleShip) 
+
+[![Stories In Progress](https://badge.waffle.io/cdeck3r/BattleShip.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/cdeck3r/BattleShip) 
 
 # Battleship Software Project
 
