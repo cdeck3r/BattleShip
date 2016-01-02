@@ -18,7 +18,8 @@ My research questions are
 
 Technology mix
 
-* [StarUML2](http://staruml.io) as UML tool for communicating design ideas and documentation
+* [Storiesonboard](http://storiesonboard.com/) to form a common understanding and give the requirment analysis process a direction 
+* [StarUML2](http://staruml.io) as UML tool for communicating software designs and documentating them
 * [UMPLE](http://www.umple.org) for rapid model-driven programming 
 * Java is the primary programming language
 * [Randoop](https://github.com/randoop) or [EvoSuite](http://www.evosuite.org/) for unit testing
@@ -28,12 +29,14 @@ Technology mix
 
 [Eclipse](https://eclipse.org/) will be the primary IDE, because for most of the aforementioned technologies there is an Eclipse pluging available.
 
-
 ## Content
 
+* User stories
 * OOAD
+* src
+* ...
 
-## Other Activities
+## Further Activities
 If interested, you may also want to follow my lecture activities on Twitter: [@RTWIB_cdecker](https://twitter.com/rtwib_decker) or [#RTWIBSE](https://twitter.com/hashtag/RTWIBSE).
 
 ---
