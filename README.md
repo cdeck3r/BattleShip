@@ -29,6 +29,9 @@ Technology mix
 
 [Eclipse](https://eclipse.org/) will be the primary IDE, because for most of the aforementioned technologies there is an Eclipse pluging available.
 
+## Development Journal
+The wiki pages contain my [development journal](https://github.com/cdeck3r/BattleShip/wiki) to documenting my efforts in following the objective and evaluating the results.
+
 ## Content
 
 * User stories
