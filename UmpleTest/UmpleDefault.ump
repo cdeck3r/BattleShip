@@ -90,4 +90,26 @@ class B {
      return (anotherAttribute*10);
   }
   
+}//$?[End_of_model]$?
+
+class B
+{
+  position 187 175 210 67;
+  position.association B__D 8,67 30,0;
+}
+
+class C
+{
+  position.association B__C 30,0 29,67;
+  position 297 330 109 58;
+}
+
+class D
+{
+  position 50 313 220 92;
+}
+
+class A
+{
+  position 106 51 109 75;
 }
