@@ -12,7 +12,7 @@
  */
 def UMPLEDir = 'C:\\dev\\Umple'
 def prjDir = project.projectDir
-def bDir = project.buildDir
+def bDir = buildDir
 
 /**
  * Specification of Gradle tasks
