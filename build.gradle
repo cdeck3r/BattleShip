@@ -1,0 +1,68 @@
+/*
+ * This build file is a test file for UMPLE 
+ *
+ * 1. Run UMPLE compiler for generating class diagram
+ * 2. Copy the class diagram into diagram dir 
+ */
+
+
+/*
+ * Defining some variables
+ *
+ */
+def UMPLEDir = 'C:\\dev\\Umple'
+def prjDir = project.projectDir
+
+task testVar << {
+
+	description 'Only for testing and debugging'
+	println project.name
+	println prjDir
+	println project.projectDir
+	println project.buildDir
+}
+
+def runUMPLE(String umpleCMD, File file) {
+    exec {
+        //workingDir UMPLEDir
+    	commandLine('cmd', '/c', umpleCMD + ' ' + file)
+    }
+}
+
+task diagrams << {
+	description 'Creates UMPLE UML diagrams'
+	
+	def umpleCMD = UMPLEDir + '\\' + 'GenUMPLEDiagram.bat' 
+	
+	// Create a file tree with a base directory
+	FileTree umpFiles = fileTree(dir: prjDir).include '**/*.ump'
+
+	// Iterate over the contents of a tree
+	umpFiles.each {File file ->
+    	// run UMPLE
+    	println file
+    	runUMPLE(umpleCMD, file)
+    }	    	
+}
+
+task copyDiag(type: Copy) {
+	description 'Copies the class diagram into the diagram dir'
+    FileTree gvFiles = fileTree(dir: prjDir).include '**/*.gv'
+    
+    gvFiles.each {File file ->
+    	from(file)
+    	into(buildDir) 
+	}
+}
+
+task cleanDiag (type: Delete) {
+    FileTree gvFiles = fileTree(dir: prjDir)
+    gvFiles.exclude '**/build*'
+    gvFiles.include '**/*.gv'
+    
+    gvFiles.each {File file ->
+    	delete file
+	}
+}
+
+copyDiag.mustRunAfter diagrams
