@@ -13,7 +13,25 @@
 def UMPLEDir = 'C:\\dev\\Umple'
 def prjDir = project.projectDir
 
-task testVar << {
+
+/**
+ * Specification of Gradle tasks
+ *
+ */
+ 
+task diagrams
+task copyDiag(type: Copy)
+task cleanDiag(type: Delete)
+
+task testVar
+
+copyDiag.mustRunAfter diagrams
+
+/**
+ * Implementation of Gradle tasks
+ *
+ */
+testVar << {
 
 	description 'Only for testing and debugging'
 	println project.name
@@ -29,7 +47,7 @@ def runUMPLE(String umpleCMD, File file) {
     }
 }
 
-task diagrams << {
+diagrams << {
 	description 'Creates UMPLE UML diagrams'
 	
 	def umpleCMD = UMPLEDir + '\\' + 'GenUMPLEDiagram.bat' 
@@ -45,7 +63,7 @@ task diagrams << {
     }	    	
 }
 
-task copyDiag(type: Copy) {
+copyDiag {
 	description 'Copies the class diagram into the diagram dir'
     FileTree gvFiles = fileTree(dir: prjDir).include '**/*.gv'
     
@@ -55,7 +73,7 @@ task copyDiag(type: Copy) {
 	}
 }
 
-task cleanDiag (type: Delete) {
+cleanDiag {
     FileTree gvFiles = fileTree(dir: prjDir)
     gvFiles.exclude '**/build*'
     gvFiles.include '**/*.gv'
@@ -64,5 +82,3 @@ task cleanDiag (type: Delete) {
     	delete file
 	}
 }
-
-copyDiag.mustRunAfter diagrams
